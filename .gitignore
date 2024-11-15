@@ -1,3 +1,4 @@
 build
-all_lostpages
+__pycache__
 all_books
+all_lostpages
