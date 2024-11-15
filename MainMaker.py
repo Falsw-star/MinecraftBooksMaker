@@ -100,18 +100,21 @@ class DatapackMaker:
         
         self.log('Main', 'Initializing...')
         self.maker: Bookmaker = Bookmaker()
+        if os.path.exists('latest.log'):
+            os.remove('latest.log')
+            self.log('Main', 'Cleared lastest.log.')
         if not os.path.exists('all_books'): os.mkdir('all_books')
-        if not os.path.exists('all_notes'): os.mkdir('all_notes')
+        if not os.path.exists('all_lostpages'): os.mkdir('all_lostpages')
         if not os.path.exists('build'): os.mkdir('build')
         self.log('Main', 'Checked dirs.')
     
     def log(self, tag: str, text: str):
-        with open('lastest.log', 'a', encoding='utf-8') as f:
+        with open('latest.log', 'a', encoding='utf-8') as f:
             f.write(f'[{tag}] : {text}')
+            f.write('\n')
             print(f'[{tag}] : {text}')
     
     def parse_book(self, file_path:str, file_name: str) -> tuple[str, str, str, list[str]]:
-        self.log('BookParser', f'Parsing {file_name}...')
         book_info = file_name.split('-')
         title = book_info[0] if book_info[0] else 'Unknown'
         author = book_info[1] if book_info[1] else 'Unknown'
@@ -225,7 +228,7 @@ class DatapackMaker:
             i_book['functions'][1]['lore'] = lore
             books_table['pools'][0]['entries'].append(i_book)
             
-            self.log('Main', f'Added book: {title}-{author} ({len(text)} chars)')
+            self.log('Main', f'Added book: ({len(text)} chars)')
         
         with open(datapack_dir + '/data/falsw/loot_tables/books.json', 'w', encoding='utf-8') as f:
             json.dump(books_table, f, indent=4, ensure_ascii=False)
@@ -240,7 +243,7 @@ class DatapackMaker:
             i_note['functions'][1]['lore'] = lostpage
             lostpages_table['pools'][0]['entries'].append(i_note)
 
-            self.log('Main', f'Added lost page: {len(lostpage)} chars')
+            self.log('Main', f'Added lost page: {len(lostpage)} lines')
             
         # pack info tag
         tag_lostpage = str(time.time())
@@ -251,7 +254,7 @@ class DatapackMaker:
         lostpages_table['pools'][0]['entries'].append(i_tag_lostpage)
         self.log('Main', 'Added pack info tag lost page.')
         
-        with open(datapack_dir + '/data/falsw/loot_tables/notes.json', 'w', encoding='utf-8') as f:
+        with open(datapack_dir + '/data/falsw/loot_tables/lostpages.json', 'w', encoding='utf-8') as f:
             json.dump(lostpages_table, f, indent=4, ensure_ascii=False)
             self.log('Main', 'Added lost pages table.')
         
