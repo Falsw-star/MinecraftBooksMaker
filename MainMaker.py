@@ -102,7 +102,7 @@ class DatapackMaker:
         self.maker: Bookmaker = Bookmaker()
         if os.path.exists('latest.log'):
             os.remove('latest.log')
-            self.log('Main', 'Cleared lastest.log.')
+            self.log('Main', 'Cleared latest.log.')
         if not os.path.exists('all_books'): os.mkdir('all_books')
         if not os.path.exists('all_lostpages'): os.mkdir('all_lostpages')
         if not os.path.exists('build'): os.mkdir('build')
