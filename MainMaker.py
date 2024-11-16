@@ -122,7 +122,11 @@ class DatapackMaker:
         pattern = r'LORE BEGIN(.*?)LORE END'
         with open(os.path.join(file_path, file_name), 'r', encoding='utf-8') as f:
             o_text = f.read()
-            lore = [line for line in re.findall(pattern, o_text, re.DOTALL)[0].splitlines() if line]
+            lores = re.findall(pattern, o_text, re.DOTALL)
+            if lores:
+                lore = [line for line in lores[0].splitlines() if line]
+            else:
+                lore = []
             text = re.sub(pattern, '', o_text)
         
         return text, title, author, lore
