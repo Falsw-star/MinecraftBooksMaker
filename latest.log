@@ -2,7 +2,7 @@
 [Main] : Checked dirs.
 [Main] : Reading books...
 [BooksGetter] : Getting all books...
-[Main] : Finish! Total books: 30.
+[Main] : Finish! Total books: 34.
 [Main] : Reading lost pages...
 [LostPagesGetter] : Getting all lost pages...
 [Main] : Finish! Total lost pages: 10.
@@ -13,11 +13,13 @@
 [Main] : Added book: (5068 chars)
 [Main] : Added book: (691 chars)
 [Main] : Added book: (5819 chars)
+[Main] : Added book: (548 chars)
 [Main] : Added book: (1287 chars)
 [Main] : Added book: (354 chars)
 [Main] : Added book: (780 chars)
 [Main] : Added book: (542 chars)
 [Main] : Added book: (288 chars)
+[Main] : Added book: (118 chars)
 [Main] : Added book: (297 chars)
 [Main] : Added book: (261 chars)
 [Main] : Added book: (251 chars)
@@ -30,8 +32,10 @@
 [Main] : Added book: (145 chars)
 [Main] : Added book: (310 chars)
 [Main] : Added book: (270 chars)
+[Main] : Added book: (777 chars)
 [Main] : Added book: (310 chars)
 [Main] : Added book: (683 chars)
+[Main] : Added book: (1002 chars)
 [Main] : Added book: (207 chars)
 [Main] : Added book: (145 chars)
 [Main] : Added book: (1149 chars)
@@ -55,4 +59,4 @@
 [Main] : Added lost pages table.
 [Main] : Copying resources...
 [Main] : Finish!
-[Main] : Saved datapack to: build/Minecraft_BooksAndStories_b30l10
+[Main] : Saved datapack to: build/Minecraft_BooksAndStories_b34l10

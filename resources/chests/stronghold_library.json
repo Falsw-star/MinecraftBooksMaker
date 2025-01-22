@@ -79,14 +79,14 @@
                 {
                     "type": "minecraft:loot_table",
                     "name": "falsw:books",
-                    "weight": 10
+                    "weight": 50
                 },
                 {
                     "type": "minecraft:empty",
-                    "weight": 90
+                    "weight": 50
                 }
             ],
-            "rolls": 1.0
+            "rolls": 5.0
         },
         {
             "bonus_rolls": 0.0,
